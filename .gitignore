@@ -1,0 +1,13 @@
+
+node_modules/
+.env
+.env.*
+!.env.example
+payment.b64
+payment-required.json
+
+sandbox-request.json
+payment-required.json
+
+payment-headers.json
+sandbox-result.json
