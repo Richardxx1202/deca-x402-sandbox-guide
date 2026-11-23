@@ -6,7 +6,7 @@ import {
 } from 'viem';
 
 const WALLET =
-  '0xcFA50612b1836f3937d2A93d7E0aaa13Db51F481';
+  'your wallet';
 
 const USDC =
   '0x036CbD53842c5426634e7929541eC2318f3dCF7e';
