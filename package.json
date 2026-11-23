@@ -3,9 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  
+"scripts": {
+  "quote": "node start-test.mjs",
+  "wallet": "node check-wallet.mjs",
+  "dry-run": "node sign-payment.mjs --dry-run",
+  "submit": "node sign-payment.mjs"
+},
+
   "keywords": [],
   "author": "",
   "license": "ISC",

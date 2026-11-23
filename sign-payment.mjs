@@ -22,6 +22,15 @@ const PAY_TO = '0x7fb30ed8d7a7b45ee7b98903d94d87d1b9c3dad2';
 const USDC = '0x036cbd53842c5426634e7929541ec2318f3dcf7e';
 const MAX_AMOUNT = 1000000n;
 
+const DRY_RUN =
+  process.argv.includes('--dry-run') ||
+  process.env.DRY_RUN === 'true';
+
+if (DRY_RUN) {
+  console.log('DRY RUN MODE ENABLED');
+  console.log('Payment submission will be disabled.');
+}
+
 const apiKey = process.env.DECA_API_KEY;
 
 const rawPrivateKey = process.env.X402_PRIVATE_KEY?.trim();
@@ -199,10 +208,12 @@ try {
 
   console.log('ON-CHAIN SIMULATION: PASSED');
 
-  if (process.env.DRY_RUN === 'true') {
-    console.log('DRY RUN COMPLETE - No payment submitted.');
-    process.exit(0);
-  }
+  
+if (DRY_RUN) {
+  console.log('DRY RUN COMPLETE - No payment submitted.');
+  process.exit(0);
+}
+
 
 } catch (error) {
   console.error('ON-CHAIN SIMULATION: FAILED');
